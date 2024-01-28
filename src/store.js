@@ -40,7 +40,6 @@ const store = createStore({
                     `${import.meta.env.VITE_APP_API_BASE_URL}/search?search=${searchQuery}`
                 );
                 const data = await response.json();
-
                 commit("setLessons", data.body);
             } catch (error) {
                 console.error("Error fetching lessons:", error);

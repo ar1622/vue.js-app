@@ -1,14 +1,29 @@
-# vue-project
+# Details information about Vue.js and Express.js applications.
 
-This template should help get you started developing with Vue 3 in Vite.
+## Vue.js App
 
-## Recommended IDE Setup
+### GitHub Repository
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[Vue.js App Repository](https://github.com/ar1622/vue.js-app)
 
-## Customize configuration
+### Live Demo (GitHub Pages)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+[Vue.js App Live Demo](https://ar1622.github.io/vue.js-app/)
+
+## Express.js App
+
+### GitHub Repository
+
+[Express.js App Repository](https://github.com/ar1622/express-server)
+
+## Aws express.js App
+
+### Aws Route for Lessons
+
+The app exposes a route to retrieve all lessons.
+
+**Route:**
+[Get All Lesson](http://webserver-env.eba-jrmuymp5.eu-west-2.elasticbeanstalk.com/lesson)
 
 ## Project Setup
 
