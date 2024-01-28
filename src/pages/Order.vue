@@ -336,7 +336,9 @@ export default {
             };
             try {
                 const response = await fetch(
-                    `http://webserver-env.eba-jrmuymp5.eu-west-2.elasticbeanstalk.com/order/update/${orderId}`,
+                    `${
+                        import.meta.env.VITE_APP_API_BASE_URL
+                    }/order/update/${orderId}`,
                     {
                         method: "PUT",
                         headers: {

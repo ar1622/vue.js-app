@@ -114,7 +114,9 @@ export default {
             try {
                 // Make POST request to the server
                 const response = await fetch(
-                    "http://webserver-env.eba-jrmuymp5.eu-west-2.elasticbeanstalk.com/lesson/create-new-lesson/",
+                    `${
+                        import.meta.env.VITE_APP_API_BASE_URL
+                    }/lesson/create-new-lesson/`,
                     {
                         method: "POST",
                         headers: {

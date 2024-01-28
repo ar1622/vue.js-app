@@ -37,7 +37,7 @@ const store = createStore({
         async fetchLessonsBasedOnQuery({ commit }, searchQuery) {
             try {
                 const response = await fetch(
-                    `http://webserver-env.eba-jrmuymp5.eu-west-2.elasticbeanstalk.com/search?search=${searchQuery}`
+                    `${import.meta.env.VITE_APP_API_BASE_URL}/search?search=${searchQuery}`
                 );
                 const data = await response.json();
 
@@ -48,12 +48,12 @@ const store = createStore({
         },
         async fetchLessons({ commit }) {
             try {
-                const response = await fetch("http://webserver-env.eba-jrmuymp5.eu-west-2.elasticbeanstalk.com/lesson");
+                const response = await fetch(`${import.meta.env.VITE_APP_API_BASE_URL}/lesson`);
                 const data = await response.json();
 
                 commit("setLessons", data.body);
             } catch (error) {
-                console.error("Error fetching lessons:", error);
+                alert("Error fetching lessons:", error);
             }
         },
         async deleteLesson({ commit, state }, lessonId) {
@@ -66,7 +66,7 @@ const store = createStore({
                 }
 
                 const response = await fetch(
-                    `http://webserver-env.eba-jrmuymp5.eu-west-2.elasticbeanstalk.com/lesson/delete/${lessonId}`,
+                    `${import.meta.env.VITE_APP_API_BASE_URL}/lesson/delete/${lessonId}`,
                     {
                         method: "DELETE",
                     }
@@ -100,7 +100,7 @@ const store = createStore({
             try {
                 // Assuming you have a proper endpoint for saving order details
                 const response = await fetch(
-                    "http://webserver-env.eba-jrmuymp5.eu-west-2.elasticbeanstalk.com/order/save-order-details",
+                    `${import.meta.env.VITE_APP_API_BASE_URL}/order/save-order-details`,
                     {
                         method: "POST",
                         headers: {
@@ -127,7 +127,7 @@ const store = createStore({
 
         async fetchOrders({ commit }) {
             try {
-                const response = await fetch("http://webserver-env.eba-jrmuymp5.eu-west-2.elasticbeanstalk.com/order/");
+                const response = await fetch(`${import.meta.env.VITE_APP_API_BASE_URL}/order/`);
                 const data = await response.json();
 
                 commit("setOrders", data.body);
@@ -145,7 +145,7 @@ const store = createStore({
                 }
 
                 const response = await fetch(
-                    `http://webserver-env.eba-jrmuymp5.eu-west-2.elasticbeanstalk.com/order/delete/${orderId}`,
+                    `${import.meta.env.VITE_APP_API_BASE_URL}/order/delete/${orderId}`,
                     {
                         method: "DELETE",
                     }
